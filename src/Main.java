@@ -1,12 +1,11 @@
 public class Main {
     public static void main(String[] args) {
-        Character guerrero = new Warrior("Pepe", 100, 160);
-        Character mago = new Mage("Nami", 400, 40);
+        Character guerrero = new Warrior("Pepe", 100, 40, 10);
+        Character mago = new Mage("Nami", 100, 40,15);
 
         while (mago.getLivePoints() > 0 && guerrero.getLivePoints() > 0) {
             guerrero.attack(mago);
             
-
             if (mago.getLivePoints() <= 0) {
                 break;
             }
