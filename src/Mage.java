@@ -10,6 +10,8 @@ public class Mage extends Character {
     public void attack(Character target) {
         if (this.getBaseMana() < 5) {
             System.out.println("El mana de " + this.getName() + " es de 0 y no puede atacar.");
+            target.takeDamage(1);
+            return;
         } else {
             if (target.getLivePoints() > 0) {
                 System.out.println("Tu mago " + this.getName() + " ataco a " + target.getName());

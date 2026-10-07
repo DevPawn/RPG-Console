@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        Character guerrero = new Warrior("Pepe", 100, 40, 10);
-        Character mago = new Mage("Nami", 100, 40,15);
+        Character guerrero = new Warrior("Pepe", 10, 40, 2);
+        Character mago = new Mage("Nami", 10, 40,0);
 
         while (mago.getLivePoints() > 0 && guerrero.getLivePoints() > 0) {
             guerrero.attack(mago);
