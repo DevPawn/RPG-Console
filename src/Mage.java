@@ -15,8 +15,19 @@ public class Mage extends Character {
         } else {
             if (target.getLivePoints() > 0) {
                 System.out.println("Tu mago " + this.getName() + " ataco a " + target.getName());
-                target.takeDamage(this.getBaseAttack());
+                
+                // Critical Damage
+                int danoFinal = this.getBaseAttack();
+
+                if (Math.random() < 0.20) {
+                    danoFinal = danoFinal * 2;
+                    System.out.println(this.getName() + " dio un GOLPE CRITICO!");
+                }
+
+                target.takeDamage(danoFinal);
                 System.err.println(target.getName() + " recibio " + this.getBaseAttack() + " de daño");
+                // End Critical Damage
+
                 System.out.println("La vida actual de " + target.getName() + " es: " + target.getLivePoints());
                 this.baseMana -= 5;
             } else {
