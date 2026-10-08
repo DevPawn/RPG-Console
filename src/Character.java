@@ -47,4 +47,10 @@ public abstract class Character {
             livePoints -= damage;
         }
     }
+
+    public void heal() {
+        this.livePoints += 10;
+        System.out.println(this.getName() + " usó una poción y recuperó 10 puntos de vida.");
+        System.out.println("La vida actual de " + this.getName() + " es: " + this.livePoints);
+    }
 }
