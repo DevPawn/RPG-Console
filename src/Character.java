@@ -7,11 +7,13 @@ public abstract class Character {
     private int livePoints;
     private int baseAttack;
     protected int baseMana;
+    protected int maxLivePoints;
 
     // Builder
     public Character(String name, int livePoints, int baseAttack, int baseMana) {
         this.name = name;
         this.livePoints = livePoints;
+        this.maxLivePoints = livePoints;
         this.baseAttack = baseAttack;
         this.baseMana = baseMana;
     }
@@ -50,6 +52,9 @@ public abstract class Character {
 
     public void heal() {
         this.livePoints += 10;
+        if(this.livePoints > this.maxLivePoints) {
+            this.livePoints = this.maxLivePoints;
+        }
         System.out.println(this.getName() + " usó una poción y recuperó 10 puntos de vida.");
         System.out.println("La vida actual de " + this.getName() + " es: " + this.livePoints);
     }
